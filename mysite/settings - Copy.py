@@ -24,16 +24,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '@g&p(t=r)c*b*9y^p4g)g4sde0k2*pg(_ofese=+l8p29f(dnj'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+DEBUG = True
 
-DEBUG = False
-
-ALLOWED_HOSTS = ['*']
-
-try:
-    from .local_settings import *
-except ImportError:
-    pass
+ALLOWED_HOSTS = ['127.0.0.1', '<your_username>.pythonaywhere.com']
 
 
 # Application definition
@@ -82,24 +75,12 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-#DATABASES = {
- #   'default': {
-  #      'ENGINE': 'django.db.backends.sqlite3',
-   #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    #}
-#}
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd9ffr01qpv0nkr',
-        'USER': 'umxkcbxvxdswxq',
-        'PASSWORD': 'df935f4180c22959a4042ba51b8fe63bbf4a221e1ccf8b50f4848b7dfcc51c4b',
-        'HOST': 'ec2-107-20-214-99.compute-1.amazonaws.com',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 
 # Password validation
